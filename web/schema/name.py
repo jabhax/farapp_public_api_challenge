@@ -1,5 +1,4 @@
 from flask_marshmallow import Schema
-from marshmallow.fields import Nested, Number, Str
 from api.schema.transaction import TransactionSchema
 
 
