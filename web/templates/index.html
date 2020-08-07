@@ -1,0 +1,32 @@
+<!-- templates/index.html -->
+<html>
+    <head>
+        <title>FarApp Names API Challenge</title>
+    </head>
+    <body>
+        <form action="/namesearch" method="POST">
+            <div class="form-group">
+                <label>Name Type</label>
+                <input type="text" class="form-control" id="data_field_id" name="data_field" placeholder="Search name by: FIRST, LAST, MIDDLE">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+
+        {% if names %}
+            <h1>Names</h1>
+            {% for name in names %}
+            <div>
+                <p>First: {{ name.first }}</p>
+                <p>Last: {{ name.last }}</p>
+                {% if name.middle %}
+                    <p>Middle: {{ name.middle }}</p>
+                {% endif %}
+            </div>
+            <hr>
+            {% endfor %}
+        {% else %}
+            <h1>No Names data</h1>
+        {% endif %}
+    </body>
+</html>
+
